@@ -77,3 +77,29 @@
 # b = a[::-1]
 # print a
 # print b
+
+# values = [10, 21, 4, 7, 12]
+# squares = [x**2 for x in values]
+# print squares
+# values = [10, 21, 4, 7, 12]
+# squares = [x**2 for x in values if x <= 10]
+# print squares
+
+# values = [10, 21, 4, 7, 12]
+# square_set = {x**2 for x in values if x <= 10}
+# print(square_set)
+# square_dict = {x: x**2 for x in values if x <= 10}
+# print(square_dict)
+
+# values = [10, 21, 4, 7, 12]
+# total = sum([x**2 for x in values if x <= 10])
+# print(total)
+# total = sum(x**2 for x in values if x <= 10)
+# print(total)
+
+
+
+
+
+
+

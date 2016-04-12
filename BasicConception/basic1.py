@@ -58,10 +58,20 @@
 # print b
 
 # Plot operation
-# from matplotlib.pyplot import plot
+# from matplotlib import pyplot as plt
+# from numpy import array
+# # plt.figure()
+# # plt.plot(1, 2)
+# # plt.show(block=True)
+# a = array([1, 2, 3, 4])
+# plt.plot(a, a**2)
+# plt.show()
+
+# from matplotlib.pyplot import plot, show
 # from numpy import array
 # a = array([1, 2, 3, 4])
-# print plot(a, a**2)
+# plot(a, a**2)
+# show()
 
 # Loop operation
 # line = '1 2 3 4 5'
