@@ -58,4 +58,24 @@
 # print a[:, 2]
 # print a[2::2, ::2] #[lower:upper:step]
 
+# from numpy import *
+# a = array([ 0, 1, 2, 3])
+# print average(a)
+# print a.std()
+# print a.var()
+# b = range(1, 4, 1)
+# c = arange(1, 4, 1)
+# print b
+# print c
+
+import numpy as np
+a = np.array([[1,2,4],
+              [2,5,3],
+              [7,8,9]])
+A = np.mat(a)
+print A
+print a
+
+
+
 
