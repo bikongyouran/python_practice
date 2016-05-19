@@ -7,7 +7,6 @@ import codecs
 f = 'test.txt'
 i = 0
 
-
 def write_file(url):
     responseText = requests.get(url).text
     soup = BeautifulSoup(responseText,'html.parser')
