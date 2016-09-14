@@ -3,7 +3,7 @@ import pytz
 from datetime import datetime
 
 #PST date to timestamp
-input_date = '2016-2-22 9:30:00'
+input_date = '1995-01-01 00:00:00'
 tz = pytz.timezone('US/Pacific')
 dt = datetime.strptime(input_date, '%Y-%m-%d %H:%M:%S')
 dt_with_tz = tz.localize(dt, is_dst=None)
