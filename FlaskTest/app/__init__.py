@@ -1,5 +1,5 @@
 from flask import Flask,render_template
-from views import myApp
+from views import myApp,graphApp
 from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
@@ -7,6 +7,7 @@ app.config['SECRET_KEY'] = 'hard to guess string'
 Bootstrap(app)
 
 app.register_blueprint(myApp)
+app.register_blueprint(graphApp)
 
 @app.errorhandler(404)
 def page_not_found(e):

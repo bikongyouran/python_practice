@@ -1,4 +1,4 @@
-from flask import Flask,render_template,session,redirect,url_for,flash
+from flask import render_template,session,redirect,url_for,flash
 from flask_wtf import Form
 from wtforms import StringField, SubmitField
 from wtforms.validators import Required
