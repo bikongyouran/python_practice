@@ -26,5 +26,14 @@
 from pyspark import SparkContext
 
 sc = SparkContext('local')
-words = sc.parallelize(["scala","java","hadoop","spark","akka"])
-print(words.count())
+textFile = sc.textFile("README.md")
+count = textFile.count()
+print count
+linesWithSpark = textFile.filter(lambda line: "Spark" in line)
+count2 = linesWithSpark.count()
+print count2
+count3 = textFile.map(lambda line: len(line.split())).reduce(lambda a, b: a if (a > b) else b)
+print count3
+
+# words = sc.parallelize(["scala","java","hadoop","spark","akka"])
+# print(words.count())
