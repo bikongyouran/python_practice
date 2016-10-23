@@ -26,7 +26,10 @@
 from pyspark import SparkContext
 
 sc = SparkContext('local')
-textFile = sc.textFile("README.md")
+#There are two ways to create RDDs:
+# parallelizing an existing collection in your driver program,
+# or referencing a dataset in an external storage system
+textFile = sc.textFile("C:\codes\python_practice\spark\README.md")
 count = textFile.count()
 print count
 linesWithSpark = textFile.filter(lambda line: "Spark" in line)
