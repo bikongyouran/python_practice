@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 {% block title %}my Flask app{% endblock %}
-{% block page_content %}
-<img src="{{ url_for('.graph') }}" alt="Image Placeholder">
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <img src="{{ url_for('.graph') }}" alt="Image Placeholder">
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <img src="{{ url_for('.graph') }}" alt="Image Placeholder">
+        </div>
+    </div>
+</div>>
 {% endblock %}
