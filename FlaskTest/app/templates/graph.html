@@ -4,15 +4,37 @@
 {% block content %}
 <!--class "container" means fixed width;
 "container-fluid" means full(100%) width, occupy all viewport.-->
-<div class="container-fluid">
+<div class="container">
+    <div class="visible-lg row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="select pull-left">
+                <label>Select Theme: </label>
+                <select>
+                    <option selected>Default</option>
+                    <option>Dark Unica</option>
+                    <option>Sand Signika</option>
+                    <option>Grid Light</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
+            <h2>Line charts</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 image-container">
             <!--class "img-responsive" means image will support auto-fit the parent layout.
              It equals max-width: 100% and height: auto-->
             <img src="{{ url_for('.graph') }}" alt="Image Placeholder" class="img-responsive">
+            <div class="clearfix"></div>
         </div>
-        <div class="col-lg-6">
-            <img src="{{ url_for('.graph') }}" alt="Image Placeholder" class="img-responsive">
+        <div class="col-lg-6 image-container">
+            <img src="{{ url_for('.graph') }}" alt="Image Placeholder" class="img-responsive img-thumbnail">
+            <div class="clearfix"></div>
         </div>
     </div>
 
