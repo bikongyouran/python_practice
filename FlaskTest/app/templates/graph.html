@@ -2,14 +2,84 @@
 {% import "bootstrap/wtf.html" as wtf %}
 {% block title %}my Flask app{% endblock %}
 {% block content %}
+<!--class "container" means fixed width;
+"container-fluid" means full(100%) width, occupy all viewport.-->
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-6 col-md-6">
-            <img src="{{ url_for('.graph') }}" alt="Image Placeholder">
+        <div class="col-lg-6">
+            <!--class "img-responsive" means image will support auto-fit the parent layout.
+             It equals max-width: 100% and height: auto-->
+            <img src="{{ url_for('.graph') }}" alt="Image Placeholder" class="img-responsive">
         </div>
-        <div class="col-lg-6 col-md-6">
-            <img src="{{ url_for('.graph') }}" alt="Image Placeholder">
+        <div class="col-lg-6">
+            <img src="{{ url_for('.graph') }}" alt="Image Placeholder" class="img-responsive">
         </div>
     </div>
-</div>>
+
+    <div>
+        <textarea class="form-control" rows="3"></textarea>
+    </div>
+
+    <form class="form-inline" role="form">
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputEmail2">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">@</div>
+                <input class="form-control" type="email" placeholder="Enter email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputPassword2">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"> Remember me
+            </label>
+        </div>
+        <button type="submit" class="btn btn-default">Sign in</button>
+    </form>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Sign in</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
