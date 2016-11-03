@@ -1,6 +1,7 @@
 from sklearn import datasets
 from sklearn import svm
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn import linear_model
 import numpy as np
 import pickle
 from sklearn.externals import joblib
@@ -48,24 +49,60 @@ joblib is more efficient on big data, but can only pickle to the disk and not to
 # print result3
 #####################################################################################
 '''knn'''
-iris = datasets.load_iris()
-iris_X = iris.data
-iris_Y = iris.target
-
-indices = np.random.permutation(len(iris_X))#randomly switch the order
-iris_X_train = iris_X[indices[:-10]]
-iris_Y_train = iris_Y[indices[:-10]]
-iris_X_test  = iris_X[indices[-10:]]
-iris_Y_test  = iris_Y[indices[-10:]]
+# iris = datasets.load_iris()
+# iris_X = iris.data
+# iris_Y = iris.target
 #
-# iris_X_train = iris_X[:-10]
-# iris_Y_train = iris_Y[:-10]
-# iris_X_test = iris_X[-10:]
-# iris_Y_test = iris_Y[-10:]
-
-knn = KNeighborsClassifier()
-knn.fit(iris_X_train,iris_Y_train)
-predicted_result = knn.predict(iris_X_test)
-print predicted_result
-print iris_Y_test
+# indices = np.random.permutation(len(iris_X))#randomly switch the order
+# iris_X_train = iris_X[indices[:-10]]
+# iris_Y_train = iris_Y[indices[:-10]]
+# iris_X_test  = iris_X[indices[-10:]]
+# iris_Y_test  = iris_Y[indices[-10:]]
+# #
+# # iris_X_train = iris_X[:-10]
+# # iris_Y_train = iris_Y[:-10]
+# # iris_X_test = iris_X[-10:]
+# # iris_Y_test = iris_Y[-10:]
+#
+# knn = KNeighborsClassifier()
+# knn.fit(iris_X_train,iris_Y_train)
+# predicted_result = knn.predict(iris_X_test)
+# print predicted_result
+# print iris_Y_test
 #####################################################################################
+'''linear regression'''
+# diabetes = datasets.load_diabetes()
+# diabetes_X_train = diabetes.data[:-20]
+# diabetes_X_test  = diabetes.data[-20:]
+# diabetes_y_train = diabetes.target[:-20]
+# diabetes_y_test  = diabetes.target[-20:]
+#
+# regr = linear_model.LinearRegression()
+# regr.fit(diabetes_X_train, diabetes_y_train)
+# predicted_result = regr.predict(diabetes_X_test)
+# print regr.coef_
+# # Explained variance score: 1 is perfect prediction
+# # and 0 means that there is no linear relationship
+# # between X and y.
+# print regr.score(diabetes_X_test,diabetes_y_test)
+# print regr.score(diabetes_X_test,predicted_result)
+# print predicted_result
+# print diabetes_y_test
+
+#####################################################################################
+'''K-means clustering'''
+
+
+#####################################################################################
+'''Hierarchical agglomerative clustering'''
+
+#####################################################################################
+'''PCA'''
+
+
+#####################################################################################
+'''ICA'''
+
+
+#####################################################################################
+
