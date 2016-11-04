@@ -1,10 +1,10 @@
-from sklearn import datasets
-from sklearn import svm
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn import linear_model
-import numpy as np
-import pickle
-from sklearn.externals import joblib
+# from sklearn import datasets
+# from sklearn import svm
+# from sklearn.neighbors import KNeighborsClassifier
+# from sklearn import linear_model
+# import numpy as np
+# import pickle
+# from sklearn.externals import joblib
 
 # digits = datasets.load_digits() #the data set is for classification
 # iris = datasets.load_iris() #the data set is for classification
@@ -32,23 +32,32 @@ joblib is more efficient on big data, but can only pickle to the disk and not to
 '''
 #####################################################################################
 '''svm'''
+# from sklearn import datasets
+# from sklearn import svm
+# import pickle
+# from sklearn.externals import joblib
+#
 # digits = datasets.load_digits()
 # clf = svm.SVC(gamma=0.001, C=100.)
 # clf.fit(digits.data[:-10], digits.target[:-10])
 # result = clf.predict(digits.data[-10:])
 # print result
-
+#
 # s = pickle.dumps(clf)
 # clf2 = pickle.loads(s)
 # result2 = clf2.predict(digits.data[-10:])
 # print result2
-
+#
 # joblib.dump(clf,"clf.pkl")
 # clf3 = joblib.load('clf.pkl')
 # result3 = clf3.predict(digits.data[-10:])
 # print result3
 #####################################################################################
 '''knn'''
+# from sklearn import datasets
+# from sklearn.neighbors import KNeighborsClassifier
+# import numpy as np
+#
 # iris = datasets.load_iris()
 # iris_X = iris.data
 # iris_Y = iris.target
@@ -71,6 +80,9 @@ joblib is more efficient on big data, but can only pickle to the disk and not to
 # print iris_Y_test
 #####################################################################################
 '''linear regression'''
+# from sklearn import datasets
+# from sklearn import linear_model
+#
 # diabetes = datasets.load_diabetes()
 # diabetes_X_train = diabetes.data[:-20]
 # diabetes_X_test  = diabetes.data[-20:]
