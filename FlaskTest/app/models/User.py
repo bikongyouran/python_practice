@@ -1,11 +1,4 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:123456@localhost/root'
-app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
-db = SQLAlchemy(app)
-
+from .. import db
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -18,3 +11,4 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.username
+
