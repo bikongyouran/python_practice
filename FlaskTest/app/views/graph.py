@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 import numpy as np
 from io import BytesIO
 from . import graphApp
-# from .. import db
+# from app import db
 
 '''
 To draw a graph with matplotlib, must have a 2 times route. it is a trick in Flask.

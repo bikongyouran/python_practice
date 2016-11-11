@@ -3,6 +3,7 @@ from flask_wtf import Form
 from wtforms import StringField, SubmitField
 from wtforms.validators import Required
 from . import myApp
+# from ..models import User
 
 @myApp.route('/user/<name>')
 def user(name):
