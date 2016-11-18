@@ -3,7 +3,6 @@ from matplotlib import pyplot as plt
 import numpy as np
 from io import BytesIO
 from . import graphApp
-# from app import db
 
 '''
 To draw a graph with matplotlib, must have a 2 times route. it is a trick in Flask.
@@ -11,7 +10,6 @@ Here is a sample: first call /g, then in the template will route to /fig again t
 '''
 @graphApp.route('/g')
 def images():
-    # db.create_all()
     return render_template("graph.html")
 
 @graphApp.route('/fig')

@@ -3,10 +3,14 @@ from flask_wtf import Form
 from wtforms import StringField, SubmitField
 from wtforms.validators import Required
 from . import myApp
-# from ..models import User
+from ..models import User
+from .. import db
 
 @myApp.route('/user/<name>')
 def user(name):
+    testUser = User(name, name + '@test.com')
+    db.session.add(testUser)
+    db.session.commit()
     return 'hello, %s!' % name
 
 @myApp.route('/', methods=['GET','POST'])
