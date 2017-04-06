@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}my Flask app{% endblock %}
+
+<!--&lt;!&ndash; add d3 &ndash;&gt;-->
+<!--{% block scripts %}-->
+<!--{{ super() }}-->
+<!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>-->
+<!--{% endblock %}-->
+
+{% block page_content %}
+        <p>Hello World 1</p>
+        <p>Hello World 2</p>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script>
+        d3.select("body").selectAll("p").text("www.ourd3js.com");
+        </script>
+{% endblock %}
+
