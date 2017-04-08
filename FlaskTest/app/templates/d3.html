@@ -11,9 +11,69 @@
 {% block page_content %}
         <p>Hello World 1</p>
         <p>Hello World 2</p>
-<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <svg>
+                <rect></rect>
+                <rect></rect>
+        </svg>
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
         <script>
-        d3.select("body").selectAll("p").text("www.ourd3js.com");
+        var str = "china"
+        var p = d3.select("body").selectAll("p");
+        p.datum(str)
+        p.text(function(d, i){
+                return "第 "+ i + " 个元素绑定的数据是 " + d;
+        });
+
+        var width = 300;  //画布的宽度
+        var height = 300;   //画布的高度
+        var svg = d3.select("body")     //选择文档中的body元素
+                .append("svg")          //添加一个svg元素
+                .attr("width", width)       //设定宽度
+                .attr("height", height);    //设定高度
+
+        var dataset = [ 250 , 210 , 170 , 130 , 90 ];  //数据（表示矩形的宽度）
+        var rectHeight = 25;   //每个矩形所占的像素高度(包括空白)
+
+        svg.selectAll("rect")
+                .data(dataset)
+                .enter()
+                .append("rect")
+                .attr("x",20)
+                .attr("y",function(d,i){
+                        return i * rectHeight;
+                })
+                .attr("width",function(d){
+                        return d;
+                })
+                .attr("height",rectHeight-2)
+                .attr("fill","steelblue");
+
+        //比例尺，d3.scale.linear() 返回一个线性比例尺，domain() 和 range() 分别设定比例尺的定义域和值域。
+        //d3.scale.linear() 的返回值，是可以当做函数来使用的。因此，才有这样的用法：linear(0.9)。
+        var dataset2 = [1.2, 2.3, 0.9, 1.5, 3.3];
+        var min = d3.min(dataset2);
+        var max = d3.max(dataset2);
+
+        var linear = d3.scale.linear()
+        .domain([min, max])
+        .range([0, 300]);
+
+        linear(0.9);    //返回 0
+        linear(2.3);    //返回 175
+        linear(3.3);    //返回 300
+
+        //序数比例尺
+        var index = [0, 1, 2, 3, 4];
+        var color = ["red", "blue", "green", "yellow", "black"];
+
+        var ordinal = d3.scale.ordinal()
+        .domain(index)
+        .range(color);
+
+        ordinal(0); //返回 red
+        ordinal(2); //返回 green
+        ordinal(4); //返回 black
         </script>
 {% endblock %}
 
