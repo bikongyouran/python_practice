@@ -26,7 +26,7 @@ def index():
 
 @myApp.route('/d3', methods=['GET','POST'])
 def d3_test():
-    return render_template('d3.html')
+    return render_template('d4.html')
 
 class NameForm(FlaskForm):
     name = StringField('What is your name?', validators=[Required()])
