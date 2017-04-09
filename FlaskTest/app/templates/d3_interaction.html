@@ -73,8 +73,8 @@
 
 	//添加矩形元素
 	var rects = svg.selectAll(".MyRect")
-		.data(dataset)
-		.enter()
+		.data(dataset)  //获取update部分
+		.enter()   //获取enter部分
 		.append("rect")
 		.attr("class","MyRect")
 		.attr("transform","translate(" + padding.left + "," + padding.top + ")")

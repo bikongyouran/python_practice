@@ -2,8 +2,7 @@
 <html>  
 <head>  
 	<meta charset="utf-8">  
-	<title>交互式操作</title>
-</head>
+	<title>让图表动起来</title>  
 
 <style>
 	.axis path,
@@ -19,7 +18,7 @@
 	}
 
 	.MyRect {
-
+		fill: steelblue;
 	}
 
 	.MyText {
@@ -28,15 +27,17 @@
 	}
 </style>
 
-<body>
-	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head> 
+
+<body>  
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>  
 	<script>
 
 	//画布大小
 	var width = 400;
 	var height = 400;
 
-	//在 body 里添加一个 SVG 画布
+	//在 body 里添加一个 SVG 画布	
 	var svg = d3.select("body")
 		.append("svg")
 		.attr("width", width)
@@ -47,7 +48,7 @@
 
 	//定义一个数组
 	var dataset = [10, 20, 30, 40, 33, 24, 12, 5];
-
+		
 	//x轴的比例尺
 	var xScale = d3.scale.ordinal()
 		.domain(d3.range(dataset.length))
@@ -62,7 +63,7 @@
 	var xAxis = d3.svg.axis()
 		.scale(xScale)
 		.orient("bottom");
-
+		
 	//定义y轴
 	var yAxis = d3.svg.axis()
 		.scale(yScale)
@@ -81,23 +82,25 @@
 		.attr("x", function(d,i){
 			return xScale(i) + rectPadding/2;
 		} )
+		.attr("width", xScale.rangeBand() - rectPadding )
+		.attr("y",function(d){
+			var min = yScale.domain()[0];
+			return yScale(min);
+		})
+		.attr("height", function(d){
+			return 0;
+		})
+		.transition()
+		.delay(function(d,i){
+			return i * 200;
+		})
+		.duration(2000)
+		.ease("bounce")
 		.attr("y",function(d){
 			return yScale(d);
 		})
-		.attr("width", xScale.rangeBand() - rectPadding )
 		.attr("height", function(d){
 			return height - padding.top - padding.bottom - yScale(d);
-		})
-		.attr("fill","steelblue")		//填充颜色不要写在CSS里
-		.on("mouseover",function(d,i){
-			d3.select(this)
-				.attr("fill","yellow");
-		})
-		.on("mouseout",function(d,i){
-			d3.select(this)
-				.transition()
-		        .duration(500)
-				.attr("fill","steelblue");
 		});
 
 	//添加文字元素
@@ -110,9 +113,6 @@
 		.attr("x", function(d,i){
 			return xScale(i) + rectPadding/2;
 		} )
-		.attr("y",function(d){
-			return yScale(d);
-		})
 		.attr("dx",function(){
 			return (xScale.rangeBand() - rectPadding)/2;
 		})
@@ -121,6 +121,19 @@
 		})
 		.text(function(d){
 			return d;
+		})
+		.attr("y",function(d){
+			var min = yScale.domain()[0];
+			return yScale(min);
+		})
+		.transition()
+		.delay(function(d,i){
+			return i * 200;
+		})
+		.duration(2000)
+		.ease("bounce")
+		.attr("y",function(d){
+			return yScale(d);
 		});
 
 	//添加x轴
