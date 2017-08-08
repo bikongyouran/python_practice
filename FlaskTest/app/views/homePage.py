@@ -28,6 +28,10 @@ def index():
 def d3_test():
     return render_template('d3_chart_transition.html')
 
+@myApp.route('/ex', methods=['GET','POST'])
+def ex_test():
+    return render_template('copied_sample_index.html')
+
 class NameForm(FlaskForm):
     name = StringField('What is your name?', validators=[Required()])
     submit = SubmitField('Submit')
