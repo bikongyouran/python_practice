@@ -30,7 +30,7 @@ def d3_test():
 
 @myApp.route('/ex', methods=['GET','POST'])
 def ex_test():
-    return render_template('copied_sample_index.html')
+    return render_template('two-and-one.html')
 
 class NameForm(FlaskForm):
     name = StringField('What is your name?', validators=[Required()])
