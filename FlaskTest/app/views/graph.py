@@ -10,7 +10,7 @@ Here is a sample: first call /g, then in the template will route to /fig again t
 '''
 @graphApp.route('/g')
 def images():
-    return render_template("graph.html")
+    return render_template("real-graph.html")
 
 @graphApp.route('/fig')
 def graph():
