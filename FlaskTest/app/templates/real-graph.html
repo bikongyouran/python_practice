@@ -7,9 +7,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-6">
-            <div id="sample-chart"></div>
-            <p> test </p>
-            <!--<img src="{{ url_for('.graph') }}" alt="Image Placeholder" class="img-responsive img-thumbnail">-->
+            <div id="container"></div>
             <div class="clearfix"></div>
         </div>
         <div class="col-lg-6 image-container">
@@ -19,24 +17,16 @@
             <div class="clearfix"></div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-            </div>
-        </div>
-        <div class="col-lg-6">
-
-        </div>
-    </div>
 </div>
 {% endblock %}
 
-{% block javascript %}
-    <!--<script type="text/javascript" src="{{ url_for('assets', filename='js/two-and-one.js') }}"></script>-->
-    <script type="text/javascript">
-        {{ include ("two-and-one.js") }}
-    </script>
+{% block Scripter %}
+    <script type="text/javascript" src="{{ url_for('assets', filename='highcharts.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('assets', filename='high-chart-sample.js') }}"></script>
+<!--<script type="text/javascript">-->
+        <!--{{ include ("highcharts.js") }}-->
+    <!--</script>-->
+    <!--<script type="text/javascript">-->
+        <!--{{ include ("high-chart-sample.js") }}-->
+    <!--</script>-->
 {% endblock %}
