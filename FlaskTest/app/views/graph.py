@@ -26,6 +26,10 @@ def graph():
     figData.seek(0)
     return send_file(figData, mimetype='image/png')
 
+@graphApp.route('/admin')
+def admin():
+    return render_template("admin-sample.html")
+
 if __name__ == "__main__":
     t = np.arange(0,5,0.2)
     plt.plot(t,t,'r--',t,t**2,'bs',t,t**3,'g^')
