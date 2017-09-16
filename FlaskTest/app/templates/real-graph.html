@@ -11,11 +11,11 @@
 "container-fluid" means full(100%) width, occupy all viewport.-->
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-6">
-            <div id="container"></div>
+        <div class="col-lg-6 panel">
+            <div id="container" class="panel-body"></div>
             <div class="clearfix"></div>
         </div>
-        <div class="col-lg-6 image-container">
+        <div class="col-lg-6 image-container panel">
             <!--class "img-responsive" means image will support auto-fit the parent layout.
              It equals max-width: 100% and height: auto-->
             <img src="{{ url_for('.graph') }}" alt="Image Placeholder" class="img-responsive">
