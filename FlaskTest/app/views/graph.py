@@ -28,7 +28,7 @@ def graph():
 
 @graphApp.route('/admin')
 def admin():
-    return render_template("admin-sample.html")
+    return render_template("admin.html")
 
 if __name__ == "__main__":
     t = np.arange(0,5,0.2)
