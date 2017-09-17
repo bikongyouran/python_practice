@@ -1,5 +1,5 @@
-{% extends "bootstrap/base.html" %}
-{% block title %}my Flask app{% endblock %}
+{% extends "base.html" %}
+{% block title %}my sample dashboard{% endblock %}
 {% block styles %}
 {{ super() }}
 <link href="static/css/font-awesome.min.css" rel="stylesheet">
@@ -192,6 +192,7 @@
 <!--if you don't know the block name, check the definition in base.html under flask_bootstrp package.-->
 {% block scripts %}
 {{ super() }}
-<script type="text/javascript" src="{{ url_for('static', filename='highcharts.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='high-chart-sample.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/highcharts.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/high-chart-sample.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/templatemo-script.js') }}"></script>
 {% endblock %}

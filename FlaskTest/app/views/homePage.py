@@ -26,7 +26,7 @@ def index():
 
 @myApp.route('/d3', methods=['GET','POST'])
 def d3_test():
-    return render_template('d3_chart_transition.html')
+    return render_template('d3/d3_chart_transition.html')
 
 @myApp.route('/ex', methods=['GET','POST'])
 def ex_test():

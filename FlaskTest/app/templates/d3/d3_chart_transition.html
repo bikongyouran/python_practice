@@ -1,9 +1,7 @@
-
-<html>  
-<head>  
-	<meta charset="utf-8">  
-	<title>让图表动起来</title>  
-
+{% extends "base.html" %}
+{% block title %}my sample d3{% endblock %}
+{% block styles %}
+{{ super() }}
 <style>
 	.axis path,
 	.axis line{
@@ -26,18 +24,20 @@
 		text-anchor: middle;
 	}
 </style>
+{% endblock %}
 
-</head> 
+{% block content %}
+{% endblock %}
 
-<body>  
-	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>  
+{% block scripts %}
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 	<script>
 
 	//画布大小
 	var width = 400;
 	var height = 400;
 
-	//在 body 里添加一个 SVG 画布	
+	//在 body 里添加一个 SVG 画布
 	var svg = d3.select("body")
 		.append("svg")
 		.attr("width", width)
@@ -48,7 +48,7 @@
 
 	//定义一个数组
 	var dataset = [10, 20, 30, 40, 33, 24, 12, 5];
-		
+
 	//x轴的比例尺
 	var xScale = d3.scale.ordinal()
 		.domain(d3.range(dataset.length))
@@ -63,7 +63,7 @@
 	var xAxis = d3.svg.axis()
 		.scale(xScale)
 		.orient("bottom");
-		
+
 	//定义y轴
 	var yAxis = d3.svg.axis()
 		.scale(yScale)
@@ -140,14 +140,13 @@
 	svg.append("g")
 		.attr("class","axis")
 		.attr("transform","translate(" + padding.left + "," + (height - padding.bottom) + ")")
-		.call(xAxis); 
-		
+		.call(xAxis);
+
 	//添加y轴
 	svg.append("g")
 		.attr("class","axis")
 		.attr("transform","translate(" + padding.left + "," + padding.top + ")")
 		.call(yAxis);
 
-</script>  
-</body>  
-</html>  
+</script>
+{% endblock %}
