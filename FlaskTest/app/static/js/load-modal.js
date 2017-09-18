@@ -1,9 +1,6 @@
 $(function () {
-//$('#myModal').on('shown.bs.modal', function() {
-//    alert('shown');
-//}
 
-    $("#myModal").modal("show");
+//    $("#myModal").modal("show");
     $('#myModal').on('shown.bs.modal', function() {
            var myChart2 = Highcharts.chart('container2', {
             chart: {
@@ -30,4 +27,5 @@ $(function () {
         });
     })
 });
+
 
