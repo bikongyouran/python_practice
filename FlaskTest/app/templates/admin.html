@@ -210,6 +210,7 @@
 {% endblock %}
 
 <!--if you don't know the block name, check the definition in base.html under flask_bootstrp package.-->
+<!--sometimes, after modifying js, we need to clear browser cache to make it work.-->
 {% block scripts %}
 {{ super() }}
 <script type="text/javascript" src="{{ url_for('static', filename='js/highcharts.js') }}"></script>
